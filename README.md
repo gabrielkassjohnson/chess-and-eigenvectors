@@ -4,7 +4,7 @@ A linear algebraic method for calculating the relative strength of each chess pi
 A Description of the Problem
 
 
-	Much has been written about the relative strength of the chess pieces. Dozens or hundreds of articles, notes, and opinions can be found stretching back hundreds of years.
+Much has been written about the relative strength of the chess pieces. Dozens or hundreds of articles, notes, and opinions can be found stretching back hundreds of years.
 The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, is at least as old as ____ [cite].
 Many other heuristics have been proposed to capture the relative strength of each chess piece, and even some true calculations, such as the space averaging calculation of _____ [cite].
 The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons to their perspective.
@@ -15,7 +15,7 @@ So this calculation does capture something about the true value of each piece.
 The objectivity of the approach is apparent in another detail of it's outcome, the ratios. The proportions of value between all the pieces are somewhat more complicated than the standard heuristic, and we should pay attention to this.
 
 
-	One final historical heuristic to mention is ____(stiegliitz?) [cite]. His approach accounts for another weakness of the standard heuristic, the weakness of the outside pawns.
+One final historical heuristic to mention is ____(stiegliitz?) [cite]. His approach accounts for another weakness of the standard heuristic, the weakness of the outside pawns.
 It is well known that the outside pawns are weaker than the center pawns, but the question is: by how much?
 Stieglitz estimates these point advantages as roughly _____ (a quarter point?).
 The procedure described below gives an objective way of calculating the difference in strength between pawns, on their starting positions.
@@ -44,7 +44,7 @@ to extend to some number of decimal digits (and perhaps even an arbitrary or inf
 
 
 
-	Naturally it is hard to capture subtle information in a heuristic, so this approach is much closer to a pure calculation, yeilding individual strengths for each piece, not necesarily easy to memorize,
+Naturally it is hard to capture subtle information in a heuristic, so this approach is much closer to a pure calculation, yeilding individual strengths for each piece, not necesarily easy to memorize,
 but full of usefull information about the pieces on the board, information lacking in simpler heuristics.
 I would like to note that the above hypothesis are not the only implied effects of having an accurate calculation of the relative strength of each piece.
 There are knock on effects, some predictable, and some not.
@@ -55,7 +55,7 @@ One more important implication can be stated as another hypothesis:
 they are weaker because of being constrained and innefective in their starting position, and nothing else. They can move the same as any other of the same piece type, it's their starting position that matters.
 
 
-	This implies one final caveat about understanding the results of the following procedure: they only apply to pieces in their starting positions, at the beginning of the game. They don't show on their face positional strengths.
+This implies one final caveat about understanding the results of the following procedure: they only apply to pieces in their starting positions, at the beginning of the game. They don't show on their face positional strengths.
 Once the game starts, and pieces start moving, their actual strength in that situation is not the same as it was when the position was different.
 One way to think about this is sacrifice value. In the endgame, just because a pawn started out as a central pawn or an outside pawns doesn't make it more valuable anymore, the position has changed so much, and there are so few pieces on the board that
 it doesn't matter anymore, only the position matters.
@@ -71,7 +71,7 @@ pieces are capturing, and weaker pieces will, on average, capture pieces with lo
 A Description of the Procedure
 
 
-	Let's consider this simple version of the procedure to start.
+Let's consider this simple version of the procedure to start.
 Simply tally up the number of captures for each piece on the board, over a large number of games. That's it!
 If you overlay these numbers on a chess board you will see that the queens captured more pieces than any other pieces. The major pieces captured more than any of the pawns. And we can even see that the central pawns had more captures
 than the outside pawns.
@@ -85,7 +85,7 @@ These numbers are not simple fractions of integers (hypothesis 2).
 The numbers for white are larger than the numbers for black, both overall, and for certain pairs of pieces (hypothesis 1).
 The kingside and queenside versions of each major piece have different numbers of captures (hypothesis 4).
 
-	Even this simple tallying procedure has results that confirm our hypothesis, and that contain fine-grained information about the relative strengths of the pieces.
+Even this simple tallying procedure has results that confirm our hypothesis, and that contain fine-grained information about the relative strengths of the pieces.
 But there is an obvious problem, the proportions of the pieces are not correct.
 A simple tally considers all captures to be the same, but capturing stronger pieces is more significant, and a simple tally doesn't register that.
 We contented that the stronger pieces tended to capture stronger pieces, on average.
@@ -100,7 +100,7 @@ This problem is exemplified by the epigram on the wonderful article about chess 
 The author starts this article, which I encourage you to read, with a quote from _______ about the nature of balancing all the interconnected relationships on the chess board.
 ""
 
-	This perfectly encapsulates the tallying problem we just described, and shows a keyhole into how this problem can be solved.
+This perfectly encapsulates the tallying problem we just described, and shows a keyhole into how this problem can be solved.
 Enter Liner Algebra!
 This structure of problem is perfectly suited for linear algebra.
 The interlocking connections in our weighted tallying system, where each change of a single value changes every other value, is, in fact, an Homogeneous System of Linear Equations. 
