@@ -54,11 +54,11 @@ This contention raises two pertinent details. One, a heuristic should be simple,
 as a simple integer fraction. This implies the second point:
 
 
-2.It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
+2.  It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
 to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done).
 
 
-3.The known difference in strength between the outside pawns and the central pawns should be reflected in an approximation or calculation. 
+3.  The known difference in strength between the outside pawns and the central pawns should be reflected in an approximation or calculation. 
 
 
 
@@ -69,7 +69,7 @@ There are knock on effects, some predictable, and some not.
 One more important implication can be stated as another hypothesis:
 
 
-4.The kingside and queenside versions of a major piece, on the same side of the board, are not equal in value. They are likely very close, but not identical in strength, for the same reasons that outside pawns are weaker,
+4.  The kingside and queenside versions of a major piece, on the same side of the board, are not equal in value. They are likely very close, but not identical in strength, for the same reasons that outside pawns are weaker,
 they are weaker because of being constrained and innefective in their starting position, and nothing else. They can move the same as any other of the same piece type, it's their starting position that matters.
 
 
@@ -114,9 +114,13 @@ But how can we know what the weights are?
 When we try to go do the tally, we have no idea what weights to use, since we haven't calculated them yet.
 If you want to tally a capture, it adds value to the weight of the capturing piece, and then, uh-oh, you have to reconsider all the times that piece was captured, changing all the values of all the other pieces. Big uh-oh!
 What to do?
-This problem is exemplified by the epigram on the wonderful article about chess piece strength in the online blog ______ [cite]
-The author starts this article, which I encourage you to read, with a quote from _______ about the nature of balancing all the interconnected relationships on the chess board.
-""
+This problem is exemplified by the epigram on the wonderful article about chess piece strength frome Christian Hesse.
+The chapter starts with a quote from Georg Simmel about the nature of balancing interconnected relationships.
+
+```
+Thus it appears that there is a reciprocal determination of value by the objects. By being exchanged, each object acquires a practical realization and measure of its value through the other object.
+G. Simmel : Die Philosophie des Geldes (tr. by Tom Bottomore and David Frisby) [3]
+```
 
 This perfectly encapsulates the tallying problem we just described, and shows a keyhole into how this problem can be solved.
 Enter Liner Algebra!
@@ -141,3 +145,5 @@ Completely Revised and Updated for the 21st Century.
 Chess Series. Random House Puzzles & Games, 2006.
 
 [2] Tomašev, Nenad, Ulrich Paquet, Demis Hassabis and Vladimir Kramnik. “Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess.” ArXiv abs/2009.04374 (2020).
+
+[3] Christian Hesse. The Joys of Chess. Continental Sales, Inc., 2011.
