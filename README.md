@@ -6,6 +6,36 @@ A Description of the Problem
 
 Much has been written about the relative strength of the chess pieces. Dozens or hundreds of articles, notes, and opinions can be found stretching back hundreds of years.
 The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, is at least as old as ____ [cite].
+
+'''
+In Classical chess, piece values vary based on positional
+considerations and game stage. The piece values in Table
+6 should not be taken as a gold standard, as the sample of
+AlphaZero games that they were estimated on does not fully
+capture the diversity of human play, and the game lengths
+do not correspond to that of human games, which tend to be
+16
+Assessing Game Balance with AlphaZero
+shorter. For comparison, we have included the piece value
+estimates that we obtain by applying the same method to
+Classical chess, showing that the estimates do not deviate
+much from the known material values. Over the years,
+many material systems have been proposed in chess. The
+most commonly used one (Capablanca & de Firmian, 2006)
+gives 3–3–5–9 for values of knights, bishops, rooks and
+queens. Another system (Kaufman, 1999) gives 3.25–3.25–
+5–9.75. Yet, bishops are typically considered to be more
+valuable than the knights, and there is usually an additive
+adjustment while in possession of a bishop pair. The rook
+value varies between 4.5 and 5.5 depending on the system
+and the queen values span from 8.5 to 10. The relative
+piece values estimated on the AlphaZero game sample for
+Classical chess, 3.05–3.33–5.63–9.5, do not deviate much
+from the existing systems. This suggests that the estimates
+for the new chess variants are likely to be approximately
+correct as 
+'''
+
 Many other heuristics have been proposed to capture the relative strength of each chess piece, and even some true calculations, such as the space averaging calculation of _____ [cite].
 The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons to their perspective.
 The obvious advantage of the basic heuristic is in it's heuristic nature, it's simple. It can be taught to anyone, of any level of play, and remembered without effort.
@@ -116,3 +146,10 @@ Let's choose the real-valued eigenvector, and take it's entries as solutions to 
 These are the true relative strengths of each chess piece.
 The quality of the games used in the calculation will change the values slighly. We aim to use games above a minimum quality level to capture the truer essence of the piece's strength.
 
+## References
+
+[1] Capablanca, J. and de Firmian, N. Chess Fundamentals:
+Completely Revised and Updated for the 21st Century.
+Chess Series. Random House Puzzles & Games, 2006.
+
+[2] Tomašev, N., Paquet, U., Hassabis, D., & Kramnik, V. (2020). Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess. ArXiv, abs/2009.04374.
