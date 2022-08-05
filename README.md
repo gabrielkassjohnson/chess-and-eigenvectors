@@ -50,7 +50,10 @@ Hypotheses
 2.  It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
 to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done). This issue has been described well by Larry Kaufman, and elsewhere:
 ```
-an accurate table needs fractions, because it would be quite remarkable if the true values of such different types of pieces were all integer multiples of the pawn. The other reason is that the values of the pieces depend somewhat on what other pieces are on the board. [5]
+an accurate table needs fractions, because it would be quite remarkable 
+if the true values of such different types of pieces were all integer 
+multiples of the pawn. The other reason is that the values of the pieces 
+depend somewhat on what other pieces are on the board. [5]
 ```
 
 
