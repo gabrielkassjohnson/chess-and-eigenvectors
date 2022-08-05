@@ -8,7 +8,7 @@ A Description of the Problem
 
 
 Much has been written about the relative strength of the chess pieces. Hundreds of articles can be found stretching back years.
-The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, has been in use for decades, if not longer [1].
+The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, has been in use since at least 1942 [7,8].
 
 
 The researchers as DeepMind have performed detailed analyses of their oevre of games played by AlphaZero, their chess playing system. Their estimations of relative piece value are below:
@@ -146,4 +146,6 @@ Chess Series. Random House Puzzles & Games, 2006.
 [6] Howard Staunton. The Chess-Player’s Handbook. London, 1847. Page 34.
 
 [7] Edward Winter. The Value of the Chess Pieces. https://www.chesshistory.com/winter/extra/value.html 2022.
+
+[8]  Reuben Fine. Chess The Easy Way. 1942. Page 23.
 
