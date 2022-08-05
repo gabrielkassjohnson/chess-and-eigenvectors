@@ -118,8 +118,11 @@ This problem is exemplified by the epigram on the wonderful article about chess 
 The chapter starts with a quote from Georg Simmel about the nature of balancing interconnected relationships.
 
 ```
-Thus it appears that there is a reciprocal determination of value by the objects. By being exchanged, each object acquires a practical realization and measure of its value through the other object.
-G. Simmel : Die Philosophie des Geldes (tr. by Tom Bottomore and David Frisby) [3]
+Thus it appears that there is a reciprocal determination of value by the objects. 
+By being exchanged, each object acquires a practical realization and 
+measure of its value through the other object.
+G. Simmel : Die Philosophie des Geldes 
+(tr. by Tom Bottomore and David Frisby) [3]
 ```
 
 This perfectly encapsulates the tallying problem we just described, and shows a keyhole into how this problem can be solved.
