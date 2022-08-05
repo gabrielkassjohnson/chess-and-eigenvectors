@@ -5,38 +5,26 @@ A Description of the Problem
 
 
 Much has been written about the relative strength of the chess pieces. Dozens or hundreds of articles, notes, and opinions can be found stretching back hundreds of years.
-The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, is at least as old as ____ [cite].
+The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, has been in use for decades, if not longer [1].
 
-'''
+
+Many other heuristics have been proposed to capture the relative strength of each chess piece, and even some true calculations, such as the space averaging calculation of _____ [cite].
+
+The researchers as DeepMind have performed detailed analyses of their oevre of games played by AlphaZero, their chess playing system. Their estimations of relative piece value are below:
+
+```
 In Classical chess, piece values vary based on positional
-considerations and game stage. The piece values in Table
-6 should not be taken as a gold standard, as the sample of
-AlphaZero games that they were estimated on does not fully
-capture the diversity of human play, and the game lengths
-do not correspond to that of human games, which tend to be
-16
-Assessing Game Balance with AlphaZero
-shorter. For comparison, we have included the piece value
-estimates that we obtain by applying the same method to
-Classical chess, showing that the estimates do not deviate
-much from the known material values. Over the years,
-many material systems have been proposed in chess. The
-most commonly used one (Capablanca & de Firmian, 2006)
-gives 3–3–5–9 for values of knights, bishops, rooks and
-queens. Another system (Kaufman, 1999) gives 3.25–3.25–
-5–9.75. Yet, bishops are typically considered to be more
+considerations and game stage.[...] bishops are typically considered to be more
 valuable than the knights, and there is usually an additive
 adjustment while in possession of a bishop pair. The rook
 value varies between 4.5 and 5.5 depending on the system
 and the queen values span from 8.5 to 10. The relative
 piece values estimated on the AlphaZero game sample for
 Classical chess, 3.05–3.33–5.63–9.5, do not deviate much
-from the existing systems. This suggests that the estimates
-for the new chess variants are likely to be approximately
-correct as 
-'''
+from the existing systems. [2]
+```
 
-Many other heuristics have been proposed to capture the relative strength of each chess piece, and even some true calculations, such as the space averaging calculation of _____ [cite].
+
 The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons to their perspective.
 The obvious advantage of the basic heuristic is in it's heuristic nature, it's simple. It can be taught to anyone, of any level of play, and remembered without effort.
 Some of the other approximations have other advantages. The space calculation has the advantage of objectivity, and also representing one critical aspect of how players conceive of the game: the possibility of movement. Players are
