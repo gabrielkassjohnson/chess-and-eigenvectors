@@ -33,7 +33,7 @@ One final historical approach to mention is from the 1889 book, The Modern Chess
 The two Rook's pawns are the weakest, as each only commands one square,
 while the others command two. [4]
 ```
-But Chess writer Larry Kaufman performed a well thought out set of quanititative experiments, suggesting the the outside pawns are roughly 15% weaker. [5]
+But Chess GM and writer Larry Kaufman performed a set of computational experiments, suggesting the the outside pawns are roughly 15% weaker. [5]
 
 
 The procedure described below gives an objective way of calculating the difference in strength between pawns, on their starting positions. The concerns mentioned here lead to a logical conclusion, that the existing heuristics are all useful for different reasons, and all lacking in some respect. The over-simplicity of the standard heuristic is a problem for all but beginning players. It would be useful to know the true strength of each piece. In line with the historical approaches described above, here are the three main (but not exhaustive) hypotheses, which are simple to state, arguing why certain characteristics of a strength heuristic make it innacurate. These hypotheses can also been seen as a minimum standard by which heuristics can be judged. It all depends on what information you want to capture. 
@@ -45,7 +45,7 @@ Hypotheses
 1. The white pieces have an overall advantage over blacks pieces, due to the first move tempo advantage. Thus we can expect the sum of the values of all of white pieces to be slightly higher than the sum of all of black's pieces.
 
 2.  It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
-to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done). This issue has been described well by Larry Kaufman
+to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done). This issue has been described well by Larry Kaufman, and elsewhere:
 ```
 an accurate table needs fractions, because it would be quite remarkable if the true values of such different types of pieces were all integer multiples of the pawn. The other reason is that the values of the pieces depend somewhat on what other pieces are on the board. [5]
 ```
@@ -54,12 +54,6 @@ an accurate table needs fractions, because it would be quite remarkable if the t
 3.  The known difference in strength between the outside pawns and the central pawns should be reflected in an approximation or calculation. 
 
 
-
-Naturally it is hard to capture subtle information in a heuristic, so this approach is much closer to a pure calculation, yeilding individual strengths for each piece, not necesarily easy to memorize,
-but full of usefull information about the pieces on the board, information lacking in simpler heuristics.
-I would like to note that the above hypothesis are not the only implied effects of having an accurate calculation of the relative strength of each piece.
-There are knock on effects, some predictable, and some not.
-One more important implication can be stated as another hypothesis:
 
 
 4.  The kingside and queenside versions of a major piece, on the same side of the board, are not equal in value. They are likely very close, but not identical in strength, for the same reasons that outside pawns are weaker,
