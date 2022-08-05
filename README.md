@@ -8,8 +8,6 @@ Much has been written about the relative strength of the chess pieces. Dozens or
 The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, has been in use for decades, if not longer [1].
 
 
-Many other heuristics have been proposed to capture the relative strength of each chess piece, and even some true calculations, such as the space averaging calculation of _____ [cite].
-
 The researchers as DeepMind have performed detailed analyses of their oevre of games played by AlphaZero, their chess playing system. Their estimations of relative piece value are below:
 
 ```
