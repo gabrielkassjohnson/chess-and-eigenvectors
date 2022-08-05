@@ -24,7 +24,7 @@ piece values estimated on the AlphaZero game sample for
 Classical chess, 3.05–3.33–5.63–9.5, do not deviate much
 from the existing systems. [2]
 ```
-These values are amazingly close to an 1847 heuristic: 3.05-3.50-5.48-9.94. [6]
+These values are amazingly close to an 1847 heuristic: 3.05-3.50-5.48-9.94. [6,7]
 
 The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons.
 The obvious advantage of the basic heuristic is it's simplicity. It can be taught to anyone, of any level of play, and remembered without effort. Some of the other approximations have other advantages. Space averaging calculations have the advantage of objectivity, and also representing one critical aspect of how players conceive of the game: the possibility of movement. Players are constantly considering where to move their pieces. Pieces that can move further clearly have more opportunities for attack and defense, because they can reach more squares. So this calculation does capture something about the true value of each piece.
@@ -144,3 +144,6 @@ Chess Series. Random House Puzzles & Games, 2006.
 [5] Larry Kaufman. The Evaluation of Material Imbalances. Chess Life, March 1999.
 
 [6] Howard Staunton. The Chess-Player’s Handbook. London, 1847. Page 34.
+
+[7] Edward Winter. The Value of the Chess Pieces. https://www.chesshistory.com/winter/extra/value.html 2022.
+
