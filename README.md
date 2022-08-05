@@ -4,7 +4,7 @@ A linear algebraic method for calculating the relative strength of each chess pi
 A Description of the Problem
 
 
-Much has been written about the relative strength of the chess pieces. Dozens or hundreds of articles, notes, and opinions can be found stretching back hundreds of years.
+Much has been written about the relative strength of the chess pieces. Hundreds of articles can be found stretching back years.
 The earliest reference to the heuristic still commonly used today, of pawns worth 1, bishops and knights worth 3, rooks worth 5, and queens worth 9, has been in use for decades, if not longer [1].
 
 
@@ -23,40 +23,26 @@ from the existing systems. [2]
 ```
 
 
-The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons to their perspective.
-The obvious advantage of the basic heuristic is in it's heuristic nature, it's simple. It can be taught to anyone, of any level of play, and remembered without effort.
-Some of the other approximations have other advantages. The space calculation has the advantage of objectivity, and also representing one critical aspect of how players conceive of the game: the possibility of movement. Players are
-constantly considering where to move their pieces. Pieces that can move further clearly have more opportunities for attack and defense, because they can reach more squares.
-So this calculation does capture something about the true value of each piece.
-The objectivity of the approach is apparent in another detail of it's outcome, the ratios. The proportions of value between all the pieces are somewhat more complicated than the standard heuristic, and we should pay attention to this.
+The reason why so many approximations exist is that it's hard to encapsulate how the dynamics of the game work into a simple system of numbers. Different approaches will also have differing pros and cons.
+The obvious advantage of the basic heuristic is it's simplicity. It can be taught to anyone, of any level of play, and remembered without effort. Some of the other approximations have other advantages. Space averaging calculations have the advantage of objectivity, and also representing one critical aspect of how players conceive of the game: the possibility of movement. Players are constantly considering where to move their pieces. Pieces that can move further clearly have more opportunities for attack and defense, because they can reach more squares. So this calculation does capture something about the true value of each piece.
+The objectivity of the approach is apparent in another detail of it's outcome, the ratios. The proportions of value between all the pieces are somewhat more complicated than the standard heuristic, and this is a desireable outcome.
 
 
-One final historical approach to mention is from the 1889 The Modern Chess Instructor, with ideas developed further in 1896's Theory of Perfect Play, both by Wihelm Steinitz [4]. His approach accounts for another weakness of the standard heuristic, the weakness of the outside pawns.
-It is well known that the outside pawns are weaker than the center pawns, but the question is: by how much?
-Stieglitz qualitatively describes this advantage. But Chess writer Larry Kaufman performed a well thought out set of quanititative experiments on a set of chess games, suggesting the the outside pawns are roughly 15% weaker. [5]
-
+One final historical approach to mention is from the 1889 book, The Modern Chess Instructor, with ideas developed further in 1896's Theory of Perfect Play, both by Wihelm Steinitz [4]. His approach accounts for another flaw of the standard heuristic, the weakness of the outside pawns. It is well known that the outside pawns are weaker than the center pawns, but the question is: by how much? Stieglitz qualitatively describes this advantage. 
 ```
-The two Rook's pawns are the weakest, as each only commands one square, while the others command two. [4]
+The two Rook's pawns are the weakest, as each only commands one square,
+while the others command two. [4]
 ```
+But Chess writer Larry Kaufman performed a well thought out set of quanititative experiments, suggesting the the outside pawns are roughly 15% weaker. [5]
 
 
-The procedure described below gives an objective way of calculating the difference in strength between pawns, on their starting positions.
-The concerns mentioned here lead to a logical conclusion, that the existing heuristics are all useful for different reasons, and all lacking in some respect.
-The over-simplicity of the standard heuristic is a problem for all but beginning players.
-It would be useful to know the true strength of each piece.
-In line with the historical approaches described above, here are the three main (but not exhaustive) hypotheses, which are simple to state, arguing why certain characteristics of a strength heuristic make it innacurate.
-These hypotheses can also been seen as a minimum standard by which heuristics can be judged. It all depends on what information you want to capture. 
+The procedure described below gives an objective way of calculating the difference in strength between pawns, on their starting positions. The concerns mentioned here lead to a logical conclusion, that the existing heuristics are all useful for different reasons, and all lacking in some respect. The over-simplicity of the standard heuristic is a problem for all but beginning players. It would be useful to know the true strength of each piece. In line with the historical approaches described above, here are the three main (but not exhaustive) hypotheses, which are simple to state, arguing why certain characteristics of a strength heuristic make it innacurate. These hypotheses can also been seen as a minimum standard by which heuristics can be judged. It all depends on what information you want to capture. 
 
 
 Hypotheses
 
 
-1. The white pieces have an overall advantage over blacks pieces, due to the first move tempo advantage. This inequality has been known and discussed for a very long time. It is natural to contend that a calculation of the relative
-strengths of the pieces would show this small difference. It is logical to contend that the overall advantage of white will translate to very small advantages for each of white's pieces over each of black's equivalent piece, on average.
-That is to say, one can expect the sum of the values of all of white pieces to be slightly higher than the sum of all of black's pieces.
-This contention raises two pertinent details. One, a heuristic should be simple, so a difference of half a percent may not be 'heuristic' in nature, in that it can't be described
-as a simple integer fraction. This implies the second point:
-
+1. The white pieces have an overall advantage over blacks pieces, due to the first move tempo advantage. Thus we can expect the sum of the values of all of white pieces to be slightly higher than the sum of all of black's pieces.
 
 2.  It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
 to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done). This issue has been described well by Larry Kaufman
@@ -80,16 +66,14 @@ One more important implication can be stated as another hypothesis:
 they are weaker because of being constrained and innefective in their starting position, and nothing else. They can move the same as any other of the same piece type, it's their starting position that matters.
 
 
-This implies one final caveat about understanding the results of the following procedure: they only apply to pieces in their starting positions, at the beginning of the game. They don't show on their face positional strengths.
-Once the game starts, and pieces start moving, their actual strength in that situation is not the same as it was when the position was different.
-One way to think about this is sacrifice value. In the endgame, just because a pawn started out as a central pawn or an outside pawns doesn't make it more valuable anymore, the position has changed so much, and there are so few pieces on the board that
-it doesn't matter anymore, only the position matters.
-So if this procedure doesn't capture positional information what does it capture?
-It averages all of those positional advantages into a single number that for each piece that represents it's capturing ability, relative to other pieces.
+This implies one final caveat about understanding the results of the following procedure: they only apply to pieces ***in their starting positions, at the beginning of the game***. They don't show on their face positional strengths.
+Once the game starts, and pieces start moving, their actual strength in that situation is not the same as it was when the position was different. One way to think about this is sacrifice value. In the endgame, just because a pawn started out as a central pawn or an outside pawns doesn't make it more valuable anymore, the position has changed so much, and there are so few pieces on the board that it doesn't matter anymore, only the position matters. You wouldn't sacrifice a piece based on these values, because the position matters too much.
+
+So if this procedure doesn't capture positional information what does it capture? It averages all of those positional advantages into a single number that for each piece that represents it's ***capturing ability, relative to other pieces***.
 This approach takes as an axiom that capturing pieces,over many games, is what demonstrates a pieces relative strength.
-Furthermore, the entire game is advanced by capturing pieces, until the King too is inevitably trapped and captured. So these numbers also represent each piece's 'influence' over the game, from their starting positions.
+Furthermore, the entire game is advanced by capturing pieces, until the King too is inevitably trapped and captured. So these numbers also represent each piece's ***'influence' over the game, from their starting positions***.
 For example, what exactly is the underlying reason why a queen should be worth so much? Is it because it can move around the board better than other pieces? Yes, but the real effect of that is that it can capture many more pieces than
-say, a pawn. There is nothing preventing a pawn from capturing many pieces in any given game, even a piece of high value. But averaged over many, many games, the panws will not be capturing nearly as many pieces as the stronger
+say, a pawn. There is nothing preventing a pawn from capturing many pieces in any given game, even a piece of high value. But averaged over many, many games, the pawns will not be capturing nearly as many pieces as the stronger
 pieces are capturing, and weaker pieces will, on average, capture pieces with lower strengths.
 
 
