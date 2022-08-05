@@ -33,9 +33,15 @@ So this calculation does capture something about the true value of each piece.
 The objectivity of the approach is apparent in another detail of it's outcome, the ratios. The proportions of value between all the pieces are somewhat more complicated than the standard heuristic, and we should pay attention to this.
 
 
-One final historical heuristic to mention is ____(stiegliitz?) [cite]. His approach accounts for another weakness of the standard heuristic, the weakness of the outside pawns.
+One final historical approach to mention is from the 1889 The Modern Chess Instructor, with ideas developed further in 1896's Theory of Perfect Play, both by Wihelm Steinitz [4]. His approach accounts for another weakness of the standard heuristic, the weakness of the outside pawns.
 It is well known that the outside pawns are weaker than the center pawns, but the question is: by how much?
-Stieglitz estimates these point advantages as roughly _____ (a quarter point?).
+Stieglitz qualitatively describes this advantage. But Chess writer Larry Kaufman performed a well thought out set of quanititative experiments on a set of chess games, suggesting the the outside pawns are roughly 15% weaker. [5]
+
+```
+The two Rook's pawns are the weakest, as each only commands one square, while the others command two. [4]
+```
+
+
 The procedure described below gives an objective way of calculating the difference in strength between pawns, on their starting positions.
 The concerns mentioned here lead to a logical conclusion, that the existing heuristics are all useful for different reasons, and all lacking in some respect.
 The over-simplicity of the standard heuristic is a problem for all but beginning players.
@@ -55,7 +61,10 @@ as a simple integer fraction. This implies the second point:
 
 
 2.  It is natural to expect that any calculation of the relative strengths of the chess pieces will probably not exhibit behavior that conforms to simple fractions of small integers. That is, one can expect the results of any such calculation
-to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done).
+to extend to some number of decimal digits (and perhaps even an arbitrary or infinte number of decimal digits, depending on how the calculation is done). This issue has been described well by Larry Kaufman
+```
+an accurate table needs fractions, because it would be quite remarkable if the true values of such different types of pieces were all integer multiples of the pawn. The other reason is that the values of the pieces depend somewhat on what other pieces are on the board. [5]
+```
 
 
 3.  The known difference in strength between the outside pawns and the central pawns should be reflected in an approximation or calculation. 
@@ -150,3 +159,7 @@ Chess Series. Random House Puzzles & Games, 2006.
 [2] Tomašev, Nenad, Ulrich Paquet, Demis Hassabis and Vladimir Kramnik. “Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess.” ArXiv abs/2009.04374 (2020).
 
 [3] Christian Hesse. The Joys of Chess. Continental Sales, Inc., 2011.
+
+[4] Wilhelm Steinitz. The Modern Chess Instructor. Russell enterprises Incorporated. 1889 reprinted 2017. 
+
+[5] Larry Kaufman. The Evaluation of Material Imbalances. Chess Life, March 1999.
