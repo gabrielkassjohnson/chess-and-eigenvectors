@@ -140,4 +140,4 @@ The quality of the games used in the calculation will change the values slighly.
 Completely Revised and Updated for the 21st Century.
 Chess Series. Random House Puzzles & Games, 2006.
 
-[2] Tomašev, N., Paquet, U., Hassabis, D., & Kramnik, V. (2020). Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess. ArXiv, abs/2009.04374.
+[2] Tomašev, Nenad, Ulrich Paquet, Demis Hassabis and Vladimir Kramnik. “Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess.” ArXiv abs/2009.04374 (2020).
