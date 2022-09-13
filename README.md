@@ -93,7 +93,7 @@ But there is an obvious problem, the proportions of the pieces are not correct.
 A simple tally considers all captures to be the same, but capturing stronger pieces is more significant, and a simple tally doesn't register that.
 Stronger pieces tend to capture stronger pieces, on average.
 So how can we calculate the tally, while accounting for all the strengths of the pieces that were captured?
-We need weights for each piece, so that when a strong piece is captured, the capturing piece has it's tally increased **proportionally*** to the strength of the piece that it captured.
+We need weights for each piece, so that when a strong piece is captured, the capturing piece has it's tally increased ***proportionally*** to the strength of the piece that it captured.
 So when a piece captures another piece, it gets the weight of the captured piece addded to it's tally.
 But how can we know what the weights are?
 When we try to go do the tally, we have no idea what weights to use, since we haven't calculated them yet.
