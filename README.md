@@ -76,7 +76,7 @@ say, a pawn. There is nothing preventing a pawn from capturing many pieces in an
 pieces are capturing, and weaker pieces will, on average, capture pieces with lower strengths. So, we need an approach that can balance these relationships, and distill them into a single number for each piece.
 
 
-A Description of the Procedure
+## The Procedure
 
 
 Let's consider a simplified version of the procedure to start.
@@ -92,6 +92,8 @@ Even this simple tallying procedure has results that confirm some of our suspici
 But there is an obvious problem, the proportions of the pieces are not correct.
 A simple tally considers all captures to be the same, but capturing stronger pieces is more significant, and a simple tally doesn't register that.
 Stronger pieces tend to capture stronger pieces, on average.
+
+
 So how can we calculate the tally, while accounting for all the strengths of the pieces that were captured?
 We need weights for each piece, so that when a strong piece is captured, the capturing piece has it's tally increased ***proportionally*** to the strength of the piece that it captured.
 So when a piece captures another piece, it gets the weight of the captured piece addded to it's tally.
