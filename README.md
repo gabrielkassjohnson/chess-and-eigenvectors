@@ -1,10 +1,9 @@
 # chess-and-eigenvectors
-A linear algebraic method for calculating the relative strength of each chess piece from a large dataset of high quality games
 
+This figure shows the results of a calculation to find the 'fighting strength' or 'influence over material' of each chess piece ***in their starting positions, at the beginning of the game***. A discussion of the peculiarities revealed by this approach follows a brief summary of other efforts to solve this question.
 
 <img  src="chess-values.png" />
 
-This figure shows the results of a calculation to find the 'fighting strength' or 'influence over material' of each chess piece ***in their starting positions, at the beginning of the game***. A discussion of the peculiarities revealed by this approach follows a brief summary of other efforts to solve this question.
 
 ## A Description of the Problem
 
